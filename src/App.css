@@ -1,0 +1,62 @@
+:root {
+  /* Light Theme */
+  --header-bg: #ffffff;
+  --text-color: #23314a;
+  --secondary-text: #8fa1b1;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --body-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --header-bg: #23314a;
+  --text-color: #ffffff;
+  --secondary-text: #8fa1b1;
+  --card-bg: #1a2434;
+  --border-color: #2d3a4f;
+  --body-bg: #121a25;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #db8084;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d86c70;
+}

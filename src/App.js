@@ -4,7 +4,7 @@ import { CartProvider } from "./contexts/CartContext";
 import Header from "./components/Header/Header";
 import ProductList from "./components/ProductList/ProductList";
 import { products } from "./data/products";
-//import "./App.css";
+import "./App.css";
 
 function App() {
   return (
