@@ -136,6 +136,7 @@
   color: #db8084;
   font-weight: bold;
   margin: 0 0 1rem 0;
+  white-space: nowrap;
 }
 
 .quantity-controls {
@@ -215,6 +216,7 @@
   padding: 0.5rem;
   background: rgba(219, 128, 132, 0.1);
   border-radius: 5px;
+  white-space: nowrap;
 }
 
 .cart-actions {

@@ -66,6 +66,13 @@
   margin: 0;
 }
 
+.gallery-price {
+  color: #db8084;
+  font-weight: 600;
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
   .product-gallery {
     padding: 2rem 0;

@@ -1,5 +1,5 @@
 import React from "react";
-//import "./ProductGallery.css";
+import "./ProductGallery.css";
 
 const ProductGallery = () => {
   const galleryImages = [
