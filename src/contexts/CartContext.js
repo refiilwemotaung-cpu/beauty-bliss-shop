@@ -8,6 +8,7 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -52,6 +53,18 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const value = {
     cartItems,
     addToCart,
@@ -59,6 +72,10 @@ export const CartProvider = ({ children }) => {
     updateQuantity,
     getTotalItems,
     getTotalPrice,
+    isCartOpen,
+    openCart,
+    closeCart,
+    clearCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
