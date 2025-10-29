@@ -1,8 +1,23 @@
+import React from "react";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { CartProvider } from "./contexts/CartContext";
+import Header from "./components/Header/Header";
+import ProductList from "./components/ProductList/ProductList";
+import { products } from "./data/products";
+//import "./App.css";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Beauty Bliss - Coming Soon</h1>
-    </div>
+    <ThemeProvider>
+      <CartProvider>
+        <div className="App">
+          <Header />
+          <main>
+            <ProductList products={products} />
+          </main>
+        </div>
+      </CartProvider>
+    </ThemeProvider>
   );
 }
 
