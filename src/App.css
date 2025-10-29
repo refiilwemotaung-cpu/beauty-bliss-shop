@@ -60,3 +60,20 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #d86c70;
 }
+
+section {
+  padding: 4rem 0;
+}
+
+/* Ensure smooth transitions between sections */
+.product-gallery,
+.product-list,
+.about {
+  transition: all 0.3s ease;
+}
+
+/* Enhanced focus styles for better accessibility */
+.about-card:focus-within {
+  outline: 2px solid #db8084;
+  outline-offset: 2px;
+}
