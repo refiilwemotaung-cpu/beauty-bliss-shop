@@ -1,6 +1,6 @@
 import React from "react";
 import { useCart } from "../../contexts/CartContext";
-//import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Header.css";
 
 const Header = () => {
