@@ -5,6 +5,13 @@ import "./ProductCard.css";
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("en-ZA", {
+      style: "currency",
+      currency: "ZAR",
+    }).format(price);
+  };
+
   return (
     <div className="product-card">
       <div className="product-image">{product.image}</div>
@@ -17,7 +24,7 @@ const ProductCard = ({ product }) => {
           <span>({product.rating})</span>
         </div>
         <div className="product-footer">
-          <span className="product-price">${product.price}</span>
+          <span className="product-price">{formatPrice(product.price)}</span>
           <button
             className="add-to-cart-btn"
             onClick={() => addToCart(product)}
