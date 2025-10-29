@@ -1,0 +1,136 @@
+.about {
+  padding: 4rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--card-bg) 0%,
+    rgba(143, 161, 177, 0.1) 100%
+  );
+}
+
+.about-title {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.about-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #db8084;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text h3 {
+  color: var(--text-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.about-text p {
+  color: var(--secondary-text);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.feature h4 {
+  color: var(--text-color);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.feature p {
+  color: var(--secondary-text);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.about-visuals {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.visual-item {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.visual-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: #db8084;
+}
+
+.visual-emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.visual-item p {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 0;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .visual-item {
+    padding: 1.5rem;
+  }
+
+  .visual-emoji {
+    font-size: 2.5rem;
+  }
+}
