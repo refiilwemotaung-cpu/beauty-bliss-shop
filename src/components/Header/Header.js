@@ -9,8 +9,24 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerHeight = document.querySelector(".header").offsetHeight;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
+  };
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+
+    // Update URL without page reload
+    window.history.pushState(null, "", `#${sectionId}`);
   };
 
   return (
@@ -22,10 +38,8 @@ const Header = () => {
             <li>
               <a
                 href="#home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("home");
-                }}
+                onClick={(e) => handleNavClick(e, "home")}
+                className="nav-link"
               >
                 Home
               </a>
@@ -33,10 +47,8 @@ const Header = () => {
             <li>
               <a
                 href="#products"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("products");
-                }}
+                onClick={(e) => handleNavClick(e, "products")}
+                className="nav-link"
               >
                 Products
               </a>
@@ -44,10 +56,8 @@ const Header = () => {
             <li>
               <a
                 href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("about");
-                }}
+                onClick={(e) => handleNavClick(e, "about")}
+                className="nav-link"
               >
                 About
               </a>
