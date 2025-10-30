@@ -87,7 +87,7 @@ const About = () => {
                 <div className="stat-item">
                   <div className="stat-emoji">🚚</div>
                   <div className="stat-content">
-                    <div className="stat-number">24h</div>
+                    <div className="stat-number">24hr</div>
                     <div className="stat-label">Delivery</div>
                   </div>
                 </div>

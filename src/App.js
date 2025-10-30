@@ -21,7 +21,9 @@ function App() {
               <HeroCarousel />
               <ProductGallery />
             </section>
-            <ProductList products={products} />
+            <section id="products">
+              <ProductList products={products} />
+            </section>
             <About />
           </main>
           <Cart />
