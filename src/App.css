@@ -77,3 +77,43 @@ section {
   outline: 2px solid #db8084;
   outline-offset: 2px;
 }
+
+/* Enhanced smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better section spacing with header offset */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Ensure proper section visibility */
+#home,
+#products,
+#about {
+  position: relative;
+}
+
+/* Loading state for smooth transistions */
+.nav-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:active {
+  transform: scale(0.95);
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus-visible {
+  outline: 2px solid #db8084;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Header scroll effect */
+.header.scrolled {
+  background-color: var(--header-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}

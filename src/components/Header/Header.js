@@ -1,12 +1,14 @@
 import React from "react";
 import { useCart } from "../../contexts/CartContext";
 import { useActiveSection } from "../../hooks/useActiveSection";
+import { useScrollEffect } from "../../hooks/useScrollEffect";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Header.css";
 
 const Header = () => {
   const { getTotalItems, openCart } = useCart();
   const activeSection = useActiveSection();
+  const scrolled = useScrollEffect();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -32,7 +34,7 @@ const Header = () => {
   const isActive = (section) => activeSection === section;
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         <h1
           className="logo"
