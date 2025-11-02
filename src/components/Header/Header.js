@@ -1,10 +1,12 @@
 import React from "react";
 import { useCart } from "../../contexts/CartContext";
+import { useActiveSection } from "../../hooks/useActiveSection";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Header.css";
 
 const Header = () => {
   const { getTotalItems, openCart } = useCart();
+  const activeSection = useActiveSection();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -24,22 +26,28 @@ const Header = () => {
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     scrollToSection(sectionId);
-
-    // Update URL without page reload
     window.history.pushState(null, "", `#${sectionId}`);
   };
+
+  const isActive = (section) => activeSection === section;
 
   return (
     <header className="header">
       <div className="container">
-        <h1 className="logo">💄 Beauty Bliss</h1>
+        <h1
+          className="logo"
+          onClick={(e) => handleNavClick(e, "home")}
+          style={{ cursor: "pointer" }}
+        >
+          💄 Beauty Bliss
+        </h1>
         <nav>
           <ul className="nav-links">
             <li>
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, "home")}
-                className="nav-link"
+                className={`nav-link ${isActive("home") ? "active" : ""}`}
               >
                 Home
               </a>
@@ -48,7 +56,7 @@ const Header = () => {
               <a
                 href="#products"
                 onClick={(e) => handleNavClick(e, "products")}
-                className="nav-link"
+                className={`nav-link ${isActive("products") ? "active" : ""}`}
               >
                 Products
               </a>
@@ -57,7 +65,7 @@ const Header = () => {
               <a
                 href="#about"
                 onClick={(e) => handleNavClick(e, "about")}
-                className="nav-link"
+                className={`nav-link ${isActive("about") ? "active" : ""}`}
               >
                 About
               </a>
