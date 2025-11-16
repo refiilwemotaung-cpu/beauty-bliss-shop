@@ -9,7 +9,7 @@ A modern, fully-responsive e-commerce web application for cosmetics and beauty p
 
 ## 🎨 Live Demo
 
-[**Live Demo Link**](#) _(Add your deployment link here when ready)_
+[**Live Demo Link**](https://beauty-bliss-shop.vercel.app/)
 
 ## 📸 App Preview
 
